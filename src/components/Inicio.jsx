@@ -4,12 +4,18 @@ import notUno from "../components/img/notUNO.png"
 import notDos from "../components/img/notDos.png"
 import notTres from "../components/img/notTres.png"
 import mapa from "../components/img/mapa.png"
+import Header from "./helpers/Header"
+
 
 
 const Inicio = () => {
     return (
 
         <div>
+            <div>
+                
+            </div>
+
             <div className="inicioUno">
 
                 <img src={ftChivasUno} alt="" />
@@ -31,28 +37,28 @@ const Inicio = () => {
                 </div>
             </div>
             <h2 align="center">ULTIMAS NOTICIAS</h2>
-            <section class="noticias">
+            <section className="noticias">
 
-                <div class="informes">
+                <div className="informes">
                     <article className="division">
                         <img src={notDos} alt="Logo" />
                         <section>
-                            <p align="center"><h5>Santa Fe de Antioquia, la antigua capital del departamento y uno de los municipios más queridos por los antioqueños, es un hermoso pueblo que ofrece...</h5></p>
+                            <p align="center"><>Santa Fe de Antioquia, la antigua capital del departamento y uno de los municipios más queridos por los antioqueños, es un hermoso pueblo que ofrece...</></p>
 
                         </section>
                     </article>
                     <article className="division">
                         <img src={notUno} alt="Logo" />
                         <div>
-                            <p align="center"> <h5>Las Chivas Turísticas en Medellín se caracterizan por su gran colorido, predominando el amarillo, el azul y el rojo</h5></p>
+                            <p align="center"> <>Las Chivas Turísticas en Medellín se caracterizan por su gran colorido, predominando el amarillo, el azul y el rojo</></p>
 
                         </div>
                     </article>
                     <article className="division">
                         <img src={notTres} alt="Logo" />
                         <section>
-                            <p align="center"><h5>Nació la Chiva Rumbera para quedarse en Medellin
-                                Fue en el departamento de Antioquia, en Colombia,  cuando se construyó la primera carrocería que daría origen a las Chivas</h5> </p>
+                            <p align="center"><>Nació la Chiva Rumbera para quedarse en Medellin
+                                Fue en el departamento de Antioquia, en Colombia,  cuando se construyó la primera carrocería que daría origen a las Chivas</> </p>
 
                         </section>
                     </article>

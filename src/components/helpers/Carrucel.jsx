@@ -7,7 +7,7 @@ import Header from "./Header"
 const Carrucel = () => {
     return (
         <div  >
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={medellinoche} className="d-block  " alt="..." />
