@@ -4,7 +4,6 @@ import notUno from "../components/img/notUNO.png"
 import notDos from "../components/img/notDos.png"
 import notTres from "../components/img/notTres.png"
 import mapa from "../components/img/mapa.png"
-import Header from "./helpers/Header"
 
 
 

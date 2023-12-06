@@ -16,8 +16,8 @@ const Header = () => {
       <div className="navbar">
         <Link  className="btn">INICIO</Link>
         <Link to="/Nosotros" className="btn">NOSOTROS</Link>
-        <Link  className="btn">NOTICIAS</Link>
-        <Link className="btn">CONTACTO</Link>
+        <Link to ="/Chivas" className="btn">CHIVAS</Link>
+        <Link  to="/Crear" className="btn">CREAR CHIVAS</Link>
 
       </div>
 
