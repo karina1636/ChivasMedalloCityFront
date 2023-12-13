@@ -3,7 +3,8 @@ import "../index.css"
 import notUno from "../components/img/notUNO.png"
 import notDos from "../components/img/notDos.png"
 import notTres from "../components/img/notTres.png"
-import mapa from "../components/img/mapa.png"
+import chiva from "../components/img/logochivas.png"
+
 
 
 
@@ -12,7 +13,7 @@ const Inicio = () => {
 
         <div>
             <div>
-                
+
             </div>
 
             <div className="inicioUno">
@@ -35,7 +36,7 @@ const Inicio = () => {
                     </p>
                 </div>
             </div>
-            <h2 align="center">ULTIMAS NOTICIAS</h2>
+            <h1 align="center">ULTIMAS NOTICIAS</h1>
             <section className="noticias">
 
                 <div className="informes">
@@ -64,18 +65,34 @@ const Inicio = () => {
                 </div>
             </section>
 
-            <div>
-                <footer>
-                    <section className="content contact">
-                        <h2 className="title" align="center">Contacto</h2>
-                        <p align="center"> TEL: 01 8000 519 519</p>
-                        <figure className="mapa">
-                            <img src={mapa} height="200px"   align="center"alt="mapa"/>
+            <footer class="pie-pagina">
+                <div class="grupo-1">
+                    <div class="box">
+                        <figure>
+                            <a href="#">
+                                <img src={chiva} alt="" />
+                            </a>
                         </figure>
-                    </section>
-
-                </footer>
-            </div>
+                    </div>
+                    <div class="box">
+                        <h2>SOBRE NOSOTROS</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                    </div>
+                    <div class="box">
+                        <h2>SIGUENOS</h2>
+                        <div class="red-social">
+                            <a href="#" class="fa fa-facebook">F</a>
+                            <a href="#" class="fa fa-instagram">I</a>
+                            <a href="#" class="fa fa-twitter">X</a>
+                            <a href="#" class="fa fa-youtube">Y</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo-2">
+                    <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+                </div>
+            </footer>
 
 
 

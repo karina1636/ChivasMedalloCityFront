@@ -1,92 +1,98 @@
-import axios from 'axios'
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { v4 } from 'uuid';
+import { Link, useNavigate, useParams } from "react-router-dom";
+import "./Styles.css"
 
 
 
-
-const Crearchivas = () => {
+const EditarChivas  = () => {
     const [nombre, setnombre] = useState("")
     const [capacidad, setcapacidad] = useState("");
     const [categoria, setcategoria] = useState("");
     const [descripcion, setdescripcion] = useState("");
     const [licencia, setlicencia] = useState("");
+    let redireccion = useNavigate();
+    let {id} = useParams();
 
-    let redireccion = useNavigate()
+    async function getChivasId(){
+
+        const respuesta = await axios.get("http://localhost:3000/chivas/" + id);
+        setnombre(respuesta.data.nombre);
+        setcapacidad(respuesta.data.capacidad);
+        setcategoria(respuesta.data.categoria);
+        setdescripcion(respuesta.data.descripcion);
+        setlicencia(respuesta.data.licencia);
+    } 
+
+    useEffect(()=> {getChivasId();}, []);
 
     async function addChiva() {
         let chivaNueva = {
-            id: v4(),
             nombre: nombre,
             capacidad: capacidad,
             categoria: categoria,
             descripcion: descripcion,
             licencia: licencia,
-
         };
-        await axios.post("http://localhost:3000/chivas", chivaNueva)
+        await axios.put("http://localhost:3000/chivas/"+id, chivaNueva)
     }
 
-    const agregarChiva = () => {
-
+    const updateChiva = () => {
         Swal.fire({
-            title: "Está seguro que desea crear la Chiva?",
-            text: "Luego podrá eliminar la Chiva",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, crear Chiva"
+          title: "Está seguro que desea editar la chiva?",
+          text: "Luego podrá editar la chiva",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si, editar chiva",
         }).then((result) => {
-            if (result.isConfirmed) {
-                addChiva();
-                redireccion('/chivas')
-                Swal.fire({
-                    title: "Creada",
-                    text: "La Chiva se ha creado correctamente.",
-                    icon: "success"
-                });
-            }
+          if (result.isConfirmed) {
+            addChiva();
+            redireccion("/Chivas");
+            Swal.fire({
+              title: "Actualizada!",
+              text: "La Chiva se ha actualziado correctamente.",
+              icon: "success",
+            });
+          }
         });
-    }
+      };
 
-
-    return (
+      return (
         <div>
             <section class="estilos">
                 <div class="content">
 
-                    <h1 class="logo">CREAR <span>CHIVA</span></h1>
+                    <h1 class="logo">Formulario <span>De captura</span></h1>
 
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <h3>Crear Nueva Chiva</h3>
                             <form action="" method='post'>
                                 <div>
                                     <label htmlFor='nombre'>nombre</label>
-                                    <input type="text" onChange={(e) => setnombre(e.target.value)} />
+                                    <input type="text" onChange={(e) => setnombre(e.target.value)} value={nombre} />
                                 </div>
                                 <div>
                                     <label htmlFor='capacidad' >capacidad</label>
-                                    <input type="number" onChange={(e) => setcapacidad(e.target.value)} />
+                                    <input type="text" onChange={(e) => setcapacidad(e.target.value)}   value={capacidad}/>
                                 </div>
                                 <div>
                                     <label htmlFor='categoria' >categoria</label>
-                                    <input type="number" onChange={(e) => setcategoria(e.target.value)} />
+                                    <input type="text" onChange={(e) => setcategoria(e.target.value)} value={categoria} />
                                 </div>
                                 <div>
                                     <label htmlFor='licencia'>licencia</label>
-                                    <input type="text" onChange={(e) => setlicencia(e.target.value)} />
+                                    <input type="text" onChange={(e) => setlicencia(e.target.value)} value={licencia}/>
                                 </div>
                                 <div class="block">
                                     <label htmlFor='descripcion' >descripcion</label>
-                                    <textarea type="text" rows="3" onChange={(e) => setdescripcion(e.target.value)} ></textarea>
+                                    <textarea type="text" rows="3" onChange={(e) => setdescripcion(e.target.value)} value={descripcion}></textarea>
                                 </div>
                                 <div class="block">
-                                    <button onClick={agregarChiva} type='button'>
-                                        Enviar
+                                    <button onClick={updateChiva} type='button'>
+                                        Actualizar
                                     </button>
                                 </div>
                             </form>
@@ -111,7 +117,11 @@ const Crearchivas = () => {
 
 
         </div>
-    )
-}
+    );
+};
 
-export default Crearchivas
+export default EditarChivas      
+
+
+
+

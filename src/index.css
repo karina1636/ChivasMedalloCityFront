@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Playfair+Display&family=Roboto+Flex:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -32,7 +33,7 @@
     0px 4px 2px rgba(0, 0, 0, 0.5),
     4px 4px 5px rgba(0, 0, 0, 0.7),
     0px 0px 7px rgba(0, 0, 0, 0.4);
-  font-size: 5rem;
+  font-size: 2.5rem;
   text-transform: capitalize;
   line-height: 1.5;
   font-family: 'Playfair Display', serif;
@@ -71,7 +72,7 @@
   height: 350px;
   border: 1px solid black;
   border-radius: 20px;
-  background-image: linear-gradient(to right top, #81c2fb, #6bb5fb, #57a7fb, #4599f9, #388af7, #277df4, #1a6ff1, #1560ec, #0050e7, #003ee1, #0028d9, #0003d0);
+  background-color: #3c5c79;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -109,11 +110,7 @@
 h2 {
   font-size: 3.5rem;
   font-family: 'Playfair Display', serif;
-  text-shadow:
-    -1px -1px 2px #aaa,
-    0px 4px 2px rgba(0, 0, 0, 0.5),
-    4px 4px 5px rgba(0, 0, 0, 0.7),
-    0px 0px 7px rgba(0, 0, 0, 0.4);
+
 }
 
 .title {
@@ -123,19 +120,69 @@ h2 {
   color: #fff;
 }
 
-.contact {
-  border: black 1px solid;
-  border-radius: 20px;
-  position: relative;
-  right: -200px;
-  width: 70%;
-  height: 400px;
-  padding-top: 20px;
-  background-image: linear-gradient(to right top, #61a0ff, #3585ff, #0068ff, #0047f8, #1214eb);
-}
 
-.mapa {
-  position: relative;
-  right: -370px;
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fbf7f7;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: rgb(255, 255, 255);
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
 }
 

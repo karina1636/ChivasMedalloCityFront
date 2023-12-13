@@ -9,7 +9,7 @@ const VistaInicio = () => {
         <Header></Header>
         <Carrucel></Carrucel>
         <Inicio></Inicio>
-    </div>
+     </div>
   )
 }
 
